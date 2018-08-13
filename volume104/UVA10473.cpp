@@ -2,11 +2,6 @@
 
 using namespace std;
 
-#include<iostream>
-#include<sstream>
-#include<cstdio>
-using namespace std;
-
 int main(){
 	string str;
 	stringstream ss;

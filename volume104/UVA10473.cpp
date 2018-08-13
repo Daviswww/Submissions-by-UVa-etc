@@ -2,7 +2,8 @@
 
 using namespace std;
 
-int main(){
+int main()
+{
 	string str;
 	stringstream ss;
 	int sum;

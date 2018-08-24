@@ -9,8 +9,7 @@ int main()
 	long long x, y;
 	int i = 1;
 	while(cin >> x >> y && (x != -1 && y != -1))
-	{
-		
+	{	
 		printf("Case %d: A = %d, limit = %d, number of terms = %d\n", i++, x, y, Collatz(x, y));
 	}
 	return 0;

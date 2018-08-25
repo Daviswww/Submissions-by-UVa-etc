@@ -1,9 +1,12 @@
 #include<bits/stdc++.h>
 
 using namespace std;
+
 int main()
 {
 	int n;
+	ofstream fout;
+	fout.open("OutputFile.txt");
 	cin >> n;
 	getchar();
 	for( int g = 0 ; g < n ; ++g )
@@ -19,9 +22,9 @@ int main()
 		}
 		for( int i = 0 ; i < 5 ; ++i )
 		{
-			printf("%s", str[i].c_str());
+			cout << str[i].c_str();
 		}
-		puts("");
+		cout << endl;
 		getline(cin, c2);
 		c2 = c2.substr(0, c2.size() - 3) + (str[3] + str[2] + str[1] + str[4]);
 		cout << c2 << endl;

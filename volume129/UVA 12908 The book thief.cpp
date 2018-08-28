@@ -1,26 +1,5 @@
 /*
 https://uva.onlinejudge.org/external/129/12908.pdf
-input
-1
-2
-3
-4
-5
-6
-9000
-499977
-49999775
-0
-output
-2 2
-1 2
-3 3
-2 3
-1 3
-4 4
-45 134
-523 1000
-5225 10000
 */
 
 #include<iostream>

@@ -1,16 +1,3 @@
-/*
-https://uva.onlinejudge.org/external/131/13178.pdf
-input
-3
-2
-6
-130000000
-output
-YES
-YES
-NO
-*/
-
 #include<iostream>
 
 using namespace std;

@@ -9,12 +9,12 @@ using namespace std;
 int main(void)  
 {  
 	double a[maxn];  
-	int n, k, maxx = -1;  
+    int n, k, maxx = -1;  
     scanf("%d%d", &n, &k);  
     for (int i = 0; i < n; i++)  
     {  
         scanf("%lf", &a[i]);  
-        a[i] *= 100; //³æ¦ìÂà´« 
+        a[i] *= 100; //å–®ä½è½‰æ› 
         maxx = max(maxx, (int)a[i]);
     }
     puts("");
@@ -22,14 +22,14 @@ int main(void)
 	 
     while (right >= left)
     {  
-        int num = 0, mid = left + (right - left) / 2; //¦]¬°¤p©óªº0.01ªº´N¤£¯à¤Á  
+        int num = 0, mid = left + (right - left) / 2; //å› ç‚ºå°æ–¼çš„0.01çš„å°±ä¸èƒ½åˆ‡  
         cout << mid << " ";
         for (int i = 0; i < n; i++) num += a[i] / mid;
         cout << num << " ";
         if (num >= k)  
         {  
             left = mid + 1;           
-            ans = max(ans, mid); //­n§ä³Ì¤j­È¨Ã¥B¤£¬O©Ò¦³ªº³£¥Î¨ì¡A©Ò¥H¥²»İ¦b >=k
+            ans = max(ans, mid); //è¦æ‰¾æœ€å¤§å€¼ä¸¦ä¸”ä¸æ˜¯æ‰€æœ‰çš„éƒ½ç”¨åˆ°ï¼Œæ‰€ä»¥å¿…éœ€åœ¨ >=k
         }
         else right = mid - 1;  
     }  

@@ -1,16 +1,3 @@
-/*
-https://uva.onlinejudge.org/external/1/100.pdf
-input
-1 10
-100 200
-201 210
-900 1000
-output
-1 10 20
-100 200 125
-201 210 89
-900 1000 174
-*/
 #include<bits/stdc++.h>
 #define swap(a, b) {int c; c = a, a = b, b = c;}
 using namespace std;

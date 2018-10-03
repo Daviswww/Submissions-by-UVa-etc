@@ -7,7 +7,7 @@ int main()
 	
 	while(cin >> n)
 	{
-		int ans = n, cola;
+		int ans = n;
 		while(n >= 3)
 		{
 			int t = n / 3; 

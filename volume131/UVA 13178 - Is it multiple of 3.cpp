@@ -11,7 +11,7 @@ int main()
 		int k;
 		cin >> k;
 
-		if((n-1) % 3 == 0)
+		if((k-1) % 3 == 0)
 		{
 			cout << "NO" << endl;
 		}

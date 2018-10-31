@@ -21,7 +21,7 @@ int main()
 			s[sum]++;
 		}
 		for (int i = 1; i < n; i++)
-       		{
+		{
         		if (s[i]==0)
 			{
 				go = false;

@@ -2,13 +2,14 @@
 
 using namespace std;
 
-int main() 
+int main()
 {
-	double q, w, e;
-	while(cin >> q >> w)
+	double n, p;
+	
+	while(cin >> n >> p)
 	{
-		e = exp(log(w)/q);
-		printf("%.0lf\n", e);
+		printf("%.0f\n",pow(p ,1.0/n));
 	}
+	
 	return 0;
 }

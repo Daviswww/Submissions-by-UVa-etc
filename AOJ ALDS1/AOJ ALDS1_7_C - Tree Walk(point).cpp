@@ -42,19 +42,31 @@ void insertNode(Node *root, int parent, int left, int right) {
     return;
 }
 
-void Preorder(Node* root) {
-    queue<Node*> q;
-    q.push(root);
-    cout << "Preorder" << endl;
-    while(!q.empty()){
-        Node *temp = q.front();
-        q.pop();
-        cout << " " << temp->key;
-        if(temp->left != NULL) q.push(temp->left);
-        if(temp->right != NULL) q.push(temp->right);
+void Preorder(Node* node){
+    if(node == NULL){
+        return;
     }
-    cout << endl;
-    return ;
+    printf("%d ", node->key); 
+    Preorder(node->left);
+    Preorder(node->right);    
+}
+
+void Inorder(Node* node){
+    if(node == NULL){
+        return;
+    }
+    Inorder(node->left);
+    printf("%d ", node->key);
+    Inorder(node->right);
+}
+
+void Postorder(Node* node){
+    if(node == NULL){
+        return;
+    }
+    Postorder(node->left);
+    Postorder(node->right);
+    printf("%d ", node->key); 
 }
 
 int main() {
@@ -69,7 +81,13 @@ int main() {
         insertNode(root, key, left, right);
     }
     
+    cout << "Preorder" << endl;
     Preorder(root);
+    cout << endl << "Inorder" << endl;
+    Inorder(root);
+    cout << endl << "Postorder" << endl;
+    Postorder(root);
+    cout << endl;
 
     return 0;
 }

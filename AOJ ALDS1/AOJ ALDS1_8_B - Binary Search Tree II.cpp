@@ -1,0 +1,122 @@
+#include<iostream>
+#include<algorithm>
+#include<cstdio>
+#include<queue>
+#include<stack>
+#include<string>
+
+using namespace std;
+
+const int N = 100;
+struct Node{
+    int key;
+    int parent;
+    Node *left;
+    Node *right;
+};
+
+Node* createNode(int key){
+    Node* node = new Node();
+    node->key = key;
+    node->left = NULL;
+    node->right = NULL;
+    return node;
+}
+
+Node* search(Node* root, int key){
+    queue<Node*> q;
+    q.push(root);
+
+    while(!q.empty()){
+        Node *temp = q.front();
+        q.pop();
+        if(key == temp->key){
+            return temp;
+        }else if(key > temp->key){
+            if(temp->right != NULL) {
+                q.push(temp->right);
+            }
+        }else{
+            if(temp->left != NULL) {
+                q.push(temp->left);
+            }
+        }
+    }
+    return NULL;
+}
+
+void inorder(Node* node){
+    if(node == NULL){
+        return;
+    }
+    inorder(node->left);
+    printf(" %d", node->key);
+    inorder(node->right);
+}
+
+void preorder(Node* node){
+    if(node == NULL){
+        return;
+    }
+    printf(" %d", node->key);
+    preorder(node->left);
+    preorder(node->right);
+}
+
+void insert(Node *root, int key){
+    Node *newNode = createNode(key);
+
+    queue<Node*> q;
+    q.push(root);
+
+    while(!q.empty()){
+        Node *temp = q.front();
+        q.pop();
+
+        if(key > temp->key){
+            if(temp->right != NULL) {
+                q.push(temp->right);
+            }else{
+                temp->right = newNode;
+            }
+        }else{
+            if(temp->left != NULL) {
+                q.push(temp->left);
+            }else{
+                temp->left = newNode;
+            }
+        }
+    }
+    return ;
+}
+
+int main()
+{
+    int n, key;
+    string s;
+
+    cin >> n;
+    cin >> s >> key;
+
+    Node *root = createNode(key);
+    for(int i = 1; i < n; i++){
+        cin >> s;
+        if(s == "insert"){
+            cin >> key;
+            insert(root, key);
+        }else if(s == "find"){
+            cin >> key;
+            if(search(root, key) != NULL){
+                cout << "yes" << endl;
+            }else{
+                cout << "no" << endl;
+            }
+        }else{
+            inorder(root);
+            puts("");
+            preorder(root);
+            puts("");
+        }
+    }
+    return 0;
+}

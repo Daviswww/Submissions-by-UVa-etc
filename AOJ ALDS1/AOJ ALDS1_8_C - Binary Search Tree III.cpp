@@ -89,8 +89,6 @@ void insert(Node *root, int key){
     }
     return ;
 }
-<<<<<<< Updated upstream
-
 
 Node* remove(Node* root, int v)
 {
@@ -116,13 +114,6 @@ Node* remove(Node* root, int v)
 	return root;
 }
 
-=======
-void remove(Node *root, int key){
-    Node *node = search(root, key);
-    node = NULL;
-    return ;
-}
->>>>>>> Stashed changes
 int main()
 {
     int n, key;
@@ -146,11 +137,7 @@ int main()
             }
         }else if(s == "delete"){
             cin >> key;
-<<<<<<< Updated upstream
             root = remove(root, key);
-=======
-            remove(root, key);
->>>>>>> Stashed changes
         }else{
             inorder(root);
             puts("");

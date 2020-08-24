@@ -90,6 +90,31 @@ void insert(Node *root, int key){
     return ;
 }
 
+
+Node* remove(Node* root, int v)
+{
+	if (!root){
+        return NULL;
+    }
+    if (root->key > v){
+        root->left = remove(root->left, v);
+    }else if (root->key < v){
+        root->right = remove(root->right, v);
+    }else {
+		if (!root->left || !root->right){
+			root = (root->left) ? root->left : root->right;
+		}else {
+			Node* temp = root->right;
+			while (temp->left){
+                temp = temp->left;
+            }
+			root->key = temp->key;
+			root->right = remove(root->right, temp->key);
+		}
+	}
+	return root;
+}
+
 int main()
 {
     int n, key;
@@ -111,6 +136,9 @@ int main()
             }else{
                 cout << "no" << endl;
             }
+        }else if(s == "delete"){
+            cin >> key;
+            root = remove(root, key);
         }else{
             inorder(root);
             puts("");

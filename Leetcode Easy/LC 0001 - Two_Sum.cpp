@@ -18,3 +18,22 @@ public:
         return a;
     }
 };
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int l = 0, r = nums.size()-1, sum;
+        vector<int> ans = {0, 0};
+        while(l != r){
+            sum = nums[l] + nums[r];
+            if(sum > target){
+                --r;
+            }else if(sum < target) {
+                ++l;
+            }else{
+                return {l, r};
+            }
+        }
+        return {0, 0};
+    }
+};
